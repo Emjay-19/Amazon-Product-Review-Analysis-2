@@ -30,6 +30,7 @@ from KMS_Case_Study
 group by Product_Category
 order by TotalSales desc
 ```
+**Insight:** Identifies the product category with highest sales. 
 
 2. Top 3 sales and Bottom regions in terms of sales
 ```SQL
@@ -46,6 +47,7 @@ from KMS_Case_Study
 group by Region
 order by TotalSales asc
 ```
+**Insight:** Identifies top and bottom geographical regions for expansion or strategy improvement.
 
 3. Total sales of appliances in Ontario
 ```SQL
@@ -54,6 +56,8 @@ AppliancesSalesOntario
 from KMS_Case_Study
 where Region = 'Ontario'
 ```
+**Insight:** Helps evaluate regional product performance assessment in a specific region.
+
 4. Bottom 10 customers
 ```SQL
 SELECT top 10 Customer_Name, SUM(Sales) AS
@@ -62,6 +66,8 @@ from KMS_Case_Study
 group by Customer_Name
 order by TotalSales asc
 ```
+**Insight:** Identifies customers with least sales.
+
 5. Most shiping cost
 ```SQL
 SELECT top 1 Ship_Mode, SUM(Shipping_Cost) AS
@@ -70,7 +76,9 @@ from KMS_Case_Study
 group by Ship_Mode
 order by TotalShippingCost desc
 ```
-6. To customers and product purchased
+**Insight:** Optimize logistics and renegotiate contracts with shipping partners if needed.
+
+6. Top customers and product purchased
 ```SQL
 SELECT top 5 Customer_Name, SUM(Sales) AS
 TotalSales
@@ -92,6 +100,8 @@ from KMS_Case_Study
 group by Product_Name
 order by PurchaseCount desc
 ```
+**Insight:** Identifies the top 10 customers by total sales and analyze their purchasing behavior.
+
 7. Small business customer with highest sales
 ```SQL
 SELECT top 1 Customer_Name, SUM(Sales) AS
@@ -119,6 +129,8 @@ where Customer_Segment = 'Consumer'
 group by Customer_Name
 order by TotalProfit desc
 ```
+**Insight:** Monitor high-return customers and understand reasons (product quality, delivery issues)
+
 10. Customer that return sales 
 ```SQL
 select Customer_Name, Customer_Segment 
@@ -136,6 +148,12 @@ group by Order_Priority, Ship_Mode
 order by Order_Priority,
 AvgShippingCost desc
 ```
+### Analysis
+Based on the data analyzed, Delivery Truck is consistently used the most across all priorities, and even slightly more for critical than for low. This is counterintuitive because critical orders should prioritize speed over cost.
+Express Air, the fastest and most expensive method, is used almost equally across all priorities. This suggests no adjustment for urgency, which is inappropriate. We'd expect much higher usage for critical orders and much lower for low-priority.
+Regular Air shows similarly small variation and is actually used more for low priority than for critical.
+In conclusion, the data shows that the company’s shipping method choices do not reflect the urgency of the order priorities. Use of Express Air does not increase for higher-priority orders, and Delivery Truck is used most often, even for critical orders.
+
 
 ### Recommendations
 1. To increase revenue from the bottom 10 customers, KMS could consider implementing the following strategies;
@@ -144,7 +162,7 @@ AvgShippingCost desc
 - Leaverage data-driven insights to understand what customers like and show them relevant offers.
 - Enhance customer service and support to foster loyalty and satisfaction.
 
-2. Based on the data analyzed, the company's shipping cost spending does not aligned with the order priority, as they are not using the fastest shipping method (Express Air) more frequently for critical and high priority orders.
+2. The company should reassess its logistics strategy and better align shipping methods with order urgency to balance cost and service quality effectively.
 
 
 
