@@ -19,3 +19,6 @@ The dataset give answers to some questions such as;
 - what shipping method incurred the most cost
 - what regions has the most sales and least sales
 - who are the most valuable customers and what products do they purchased
+
+### Analysis
+
