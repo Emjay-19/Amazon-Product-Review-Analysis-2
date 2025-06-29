@@ -2,7 +2,7 @@
 
 This repository presents a collection of SQL Project and queries that demonstrate my skills in extracting insights from data, designing databases and crafting efficient queries.
 
-## Project Name: Kultra Mega Stores Inventory (KMS) Dta Analysis Project
+## Project Name: Kultra Mega Stores Inventory (KMS) Data Analysis Project
 
 ### Project Overview
 This project aim to provide actionable insights and support KMS in making informed business decisions and driving growth by analyzing sales data to identify top performing product categories, regions and customers. It also provide recommendations to increase revenue from low performing customers and evaluate shipping costs and methods. 
@@ -30,7 +30,8 @@ from KMS_Case_Study
 group by Product_Category
 order by TotalSales desc
 ```
-2a. Top 3 sales
+
+2. Top 3 sales and Bottom regions in terms of sales
 ```SQL
 SELECT top 3 Region, SUM(Sales) AS
 TotalSales
@@ -38,7 +39,6 @@ from KMS_Case_Study
 group by Region
 order by TotalSales desc
 ```
-2b. Bottom 3 sales
 ```SQL
 SELECT top 3 Region, SUM(Sales) AS
 TotalSales
@@ -46,6 +46,7 @@ from KMS_Case_Study
 group by Region
 order by TotalSales asc
 ```
+
 3. Total sales of appliances in Ontario
 ```SQL
 SELECT SUM(Sales) AS
@@ -69,7 +70,7 @@ from KMS_Case_Study
 group by Ship_Mode
 order by TotalShippingCost desc
 ```
-6. TOP CUSTOMERS and product purchased
+6. To customers and product purchased
 ```SQL
 SELECT top 5 Customer_Name, SUM(Sales) AS
 TotalSales
