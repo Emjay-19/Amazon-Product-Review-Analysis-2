@@ -20,5 +20,24 @@ The dataset give answers to some questions such as;
 - what regions has the most sales and least sales
 - who are the most valuable customers and what products do they purchased
 
-### Analysis
+### Data Analysis
+Some basic lines of queries are used during my analysis
+``` SQL
+SELECT top 1 Product_Category, SUM(Sales) AS
+TotalSales
+from KMS_Case_Study
+group by Product_Category
+order by TotalSales desc
+```
+### Recommendations
+1. To increase revenue from the bottom 10 customers, KMS could consider implementing the following strategies;
+- Tailor promotions and offers to individual customer preferences.
+- Develop and implement loyalty programs or reward that will keep customers coming back.
+- Leaverage data-driven insights to understand what customers like and show them relevant offers.
+- Enhance customer service and support to foster loyalty and satisfaction.
+
+2. Based on the data analyzed, the company's shipping cost spending does not aligned with the order priority, as they are not using the fastest shipping method (Express Air) more frequently for critical and high priority orders.
+
+
+
 
