@@ -133,10 +133,13 @@ order by TotalProfit desc
 
 10. Customer that return sales 
 ```SQL
-select Customer_Name, Customer_Segment 
-from KMS_Case_Study
-where Product_Name = 'Returned'
-group by Customer_Name, Customer_Segment
+select * from (
+    select Order_ID, Customer_Name, Customer_Segment 
+	       from KMS_Case_Study) As kMS
+join (
+    select Order_ID, Status
+	    from Order_Status) as Ord
+on KMS.Order_ID = Ord.Order_ID
 ```
 
 11. Order priority and shipping method
